@@ -94,9 +94,9 @@
           <p>Fongshan, Kaohsiung</p>
         </div>
         <div class="圖示">
-          <a href="https://github.com/yuijzeon"><i class="bi-github"></i></a>
-          <a href="https://home.gamer.com.tw/ding890326"><i class="bi bi-house-fill"></i></a>
-          <a href="#" title="遊隼#5103"><i class="bi bi-discord"></i></a>
+          <a href="https://github.com/yuijzeon" data-bs-toggle="tooltip" data-bs-placement="top" title="yuijzeon"><i class="bi-github"></i></a>
+          <a href="https://home.gamer.com.tw/ding890326" data-bs-toggle="tooltip" data-bs-placement="top" title="ding890326"><i class="bi bi-house-fill"></i></a>
+          <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="遊隼#5103"><i class="bi bi-discord"></i></a>
         </div>
         <hr>
         <p class="簡語">AAA
@@ -107,8 +107,11 @@
     </div>
     <!-- 個人資料 結束 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
-      crossorigin="anonymous"></script>
-</body>
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script>var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      })</script>
+  </body>
 
 </html>
