@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,900&subset=chinese-traditional');
+    @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,500&subset=chinese-traditional');
     @import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC:200,900&subset=chinese-traditional');
     @import url('https://fonts.googleapis.com/css?family=Noto+Sans+Mono');
     @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
@@ -17,6 +17,7 @@
       font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
       font-weight: 100;
       background-color: whitesmoke;
+      letter-spacing: 0.05em;
       color: gray;
     }
 
@@ -31,40 +32,48 @@
     .個人資料 {
       text-align: center;
     }
+
     .個人資料 img {
       width: 120px;
       border-radius: 35%;
       box-shadow: 1px 1px 12px gray;
       margin-bottom: 5px;
     }
+
     .個人資料 .中文名字 {
       font-family: "Noto Serif TC", "SimSun", serif;
       font-size: 34px;
       font-weight: 900;
       margin-bottom: -2px;
     }
+
     .個人資料 .英文名字 {
       font-family: "Noto Serif TC", "SimSun", serif;
       font-size: 10px;
       font-weight: 900;
       margin-bottom: 1rem;
     }
+
     .個人資料 .基本資料 {
       margin-bottom: 1rem;
     }
+
     .個人資料 .基本資料 p {
       margin-bottom: 8px;
       letter-spacing: 0.1em;
     }
+
     .個人資料 .圖示 {
       display: flex;
       justify-content: center;
       font-size: x-large;
       font-family: "Noto Sans Mono", "微軟正黑體", sans-serif;
     }
-    .個人資料 .圖示 > * {
+
+    .個人資料 .圖示>* {
       margin: 0px 1rem;
     }
+
     .個人資料 .簡語 {
       color: black;
     }
@@ -74,7 +83,7 @@
       justify-content: right;
       flex-direction: row;
     }
-    
+
     .橫放 {
       display: flex;
       justify-content: left;
@@ -99,21 +108,37 @@
       letter-spacing: 0.2em;
     }
 
-    .垂直 .BAR {
-      height: 100% ;
-      width: 2px;
+    .垂直 .分隔條 {
+      height: 100%;
+      width: 5px;
       background-color: #0D6EFD;
+      margin-right: 30px;
     }
-    
-    .橫放 .BAR {
-      height: 2px ;
+
+    .橫放 .分隔條 {
+      height: 5px;
       width: 100%;
       background-color: #0D6EFD;
+      margin-bottom: 30px;
+    }
+
+    .技能 h5 {
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+
+    .技能 p {
+      letter-spacing: 0.2em;
+    }
+
+    .段落 {
+      margin-bottom: 80px;
     }
 
     .測試用1 {
       background-color: orange;
     }
+
     .測試用2 {
       background-color: yellow;
     }
@@ -136,8 +161,10 @@
           <p>Fongshan, Kaohsiung</p>
         </div>
         <div class="圖示">
-          <a href="https://github.com/yuijzeon" data-bs-toggle="tooltip" data-bs-placement="top" title="yuijzeon"><i class="bi-github"></i></a>
-          <a href="https://home.gamer.com.tw/ding890326" data-bs-toggle="tooltip" data-bs-placement="top" title="ding890326"><i class="bi bi-house-fill"></i></a>
+          <a href="https://github.com/yuijzeon" data-bs-toggle="tooltip" data-bs-placement="top" title="yuijzeon"><i
+              class="bi-github"></i></a>
+          <a href="https://home.gamer.com.tw/ding890326" data-bs-toggle="tooltip" data-bs-placement="top"
+            title="ding890326"><i class="bi bi-house-fill"></i></a>
           <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="遊隼#5103"><i class="bi bi-discord"></i></a>
         </div>
         <hr>
@@ -150,22 +177,70 @@
     </div>
     <!-- 個人資料 結束 -->
 
-  <!-- 主內容 開始 -->
-  <div class="container">
-    <div>
-      <div class="row">
+    <!-- 主內容 開始 -->
+    <div class="container">
+      <div class="row 段落">
         <div class="col-12 col-md-3 標題塊 垂直">
-          <h2 class="標題">相關經歷</h2>
-          <div class="BAR"></div>
+          <h2 class="標題">專業技能</h2>
+          <div class="分隔條"></div>
         </div>
-        <div class="col-12 col-md-9 測試用2">col-4</div>
+        <div class="col-12 col-md-9">
+          <div class="技能">
+            <h5>網頁技術:</h5>
+            <p>html5 | CSS3 | RWD</p>
+          </div>
+          <div class="技能">
+            <h5>程式語言:</h5>
+            <p>JavaScript | C#</p>
+          </div>
+          <div class="技能">
+            <h5>資料庫技術:</h5>
+            <p>MSSQL | MySQL</p>
+          </div>
+          <div class="技能">
+            <h5>字型顯示技術:</h5>
+            <p>OpenType Features</p>
+          </div>
+          <div class="技能">
+            <h5>開發工具:</h5>
+            <p>Visual Studio | VS Code</p>
+          </div>
+        </div>
+      </div>
+      <div class="row 段落">
+        <div class="col-12 col-md-3 標題塊 垂直">
+          <h2 class="標題">專業技能</h2>
+          <div class="分隔條"></div>
+        </div>
+        <div class="col-12 col-md-9">
+          <div class="技能">
+            <h5>網頁技術:</h5>
+            <p>html5 | CSS3 | RWD</p>
+          </div>
+          <div class="技能">
+            <h5>程式語言:</h5>
+            <p>JavaScript | C#</p>
+          </div>
+          <div class="技能">
+            <h5>資料庫技術:</h5>
+            <p>MSSQL | MySQL</p>
+          </div>
+          <div class="技能">
+            <h5>字型顯示技術:</h5>
+            <p>OpenType Features</p>
+          </div>
+          <div class="技能">
+            <h5>開發工具:</h5>
+            <p>Visual Studio | VS Code</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- 主內容 結束 -->
+    <!-- 主內容 結束 -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"></script>
     <script>
       // 載入 bootstrap tooltip 開始
       var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
@@ -194,6 +269,6 @@
 
       tittleStyle();
     </script>
-  </body>
+</body>
 
 </html>
