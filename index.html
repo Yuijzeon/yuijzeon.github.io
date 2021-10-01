@@ -31,49 +31,91 @@
     .個人資料 {
       text-align: center;
     }
-
     .個人資料 img {
       width: 120px;
       border-radius: 50%;
       box-shadow: 1px 1px 12px gray;
       margin-bottom: 5px;
     }
-
     .個人資料 .中文名字 {
       font-family: "Noto Serif TC", "SimSun", serif;
       font-size: 34px;
       font-weight: 900;
       margin-bottom: -2px;
     }
-
     .個人資料 .英文名字 {
       font-family: "Noto Serif TC", "SimSun", serif;
       font-size: 10px;
       font-weight: 900;
       margin-bottom: 1rem;
     }
-
     .個人資料 .基本資料 {
       margin-bottom: 1rem;
     }
-
     .個人資料 .基本資料 p {
       margin-bottom: 8px;
+      letter-spacing: 0.1em;
     }
-
     .個人資料 .圖示 {
       display: flex;
       justify-content: center;
       font-size: x-large;
       font-family: "Noto Sans Mono", "微軟正黑體", sans-serif;
     }
-
     .個人資料 .圖示 > * {
       margin: 0px 1rem;
     }
-
     .個人資料 .簡語 {
       color: black;
+    }
+
+    .垂直 {
+      display: flex;
+      justify-content: right;
+      flex-direction: row;
+    }
+    
+    .橫放 {
+      display: flex;
+      justify-content: left;
+      flex-direction: column;
+    }
+
+    .垂直 .標題 {
+      writing-mode: vertical-lr;
+      font-family: "Noto Serif TC", "SimSun", serif;
+      margin: 0px 0.5em 0px 0px;
+      font-size: 56px;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+    }
+
+    .橫放 .標題 {
+      writing-mode: unset;
+      font-family: "Noto Serif TC", "SimSun", serif;
+      margin: 0px 0px 0.1em 0px;
+      font-size: 56px;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+    }
+
+    .垂直 .BAR {
+      height: 100% ;
+      width: 5px;
+      background-color: #0D6EFD;
+    }
+    
+    .橫放 .BAR {
+      height: 5px ;
+      width: 100%;
+      background-color: #0D6EFD;
+    }
+
+    .測試用1 {
+      background-color: orange;
+    }
+    .測試用2 {
+      background-color: yellow;
     }
   </style>
 </head>
@@ -99,19 +141,59 @@
           <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="遊隼#5103"><i class="bi bi-discord"></i></a>
         </div>
         <hr>
-        <p class="簡語">AAA
-          <br>BBB
-          <br>CCC
+        <p class="簡語">遊隼是也。
+          <br>平時喜歡搞有趣神奇的東西
+          <br>常常突然有很想去做的點子
+          <br>雖然可能是爛點子
         </p>
       </div>
     </div>
     <!-- 個人資料 結束 -->
+
+  <!-- 主內容 開始 -->
+  <div class="container">
+    <div>
+      <div class="row">
+        <div class="col-12 col-md-3 標題塊 垂直">
+          <h2 class="標題">相關經歷</h2>
+          <div class="BAR"></div>
+        </div>
+        <div class="col-12 col-md-9 測試用2">col-4</div>
+      </div>
+    </div>
+  </div>
+  <!-- 主內容 結束 -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-    <script>var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    <script>
+      // 載入 bootstrap tooltip 開始
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
-      })</script>
+      })
+      // 載入 bootstrap tooltip 結束
+
+      // 標題橫排直排控制 開始
+      var titleBlocks = document.querySelectorAll(".標題塊");
+
+      window.addEventListener('resize', tittleStyle);
+
+      function tittleStyle() {
+        for (let titleBlock of titleBlocks) {
+          if (window.innerWidth < 768) {
+            titleBlock.classList.remove('垂直');
+            titleBlock.classList.add('橫放');
+          } else {
+            titleBlock.classList.remove('橫放');
+            titleBlock.classList.add('垂直');
+          }
+        }
+      }
+      // 標題橫排直排控制 結束
+
+      tittleStyle();
+    </script>
   </body>
 
 </html>
