@@ -1,0 +1,110 @@
+body {
+    font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
+    font-weight: 100;
+    background-color: whitesmoke;
+    letter-spacing: 0.05em;
+    color: black;
+  }
+
+  .頁面中心 {
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .個人資料 {
+    text-align: center;
+  }
+
+  .個人資料 img {
+    width: 120px;
+    border-radius: 35%;
+    box-shadow: 1px 1px 12px gray;
+  }
+
+  .個人資料 .中文名字 {
+    font-family: "Noto Serif TC", "SimSun", serif;
+    color: gray;
+    font-size: 34px;
+    font-weight: 900;
+    margin-bottom: 0px;
+  }
+
+  .個人資料 .英文名字 {
+    font-family: "Noto Serif TC", "SimSun", serif;
+    color: gray;
+    font-size: 10px;
+    font-weight: 900;
+  }
+
+  .個人資料 .基本資料 p {
+    letter-spacing: 0.1em;
+  }
+
+  .個人資料 .圖示 {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    font-family: "Noto Sans Mono", "微軟正黑體", sans-serif;
+  }
+
+  .垂直 {
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+  }
+
+  .橫放 {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+  }
+
+  .垂直 .標題 {
+    writing-mode: vertical-lr;
+    color: gray;
+    font-family: "Noto Serif TC", "SimSun", serif;
+    font-size: 56px;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+  }
+
+  .橫放 .標題 {
+    writing-mode: unset;
+    color: gray;
+    font-family: "Noto Serif TC", "SimSun", serif;
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+  }
+
+  .垂直 .分隔條 {
+    height: 100%;
+    width: 5px;
+    background-color: #0D6EFD;
+  }
+
+  .橫放 .分隔條 {
+    height: 5px;
+    width: 100%;
+    background-color: #0D6EFD;
+  }
+
+  .技能 h5 {
+    font-weight: 500;
+    color: gray;
+  }
+
+  .技能 p {
+    letter-spacing: 0.2em;
+  }
+
+  .測試用1 {
+    background-color: orange;
+  }
+
+  .測試用2 {
+    background-color: yellow;
+  }

@@ -12,145 +12,14 @@
     @import url('https://fonts.googleapis.com/css?family=Noto+Serif+TC:200,900&subset=chinese-traditional');
     @import url('https://fonts.googleapis.com/css?family=Noto+Sans+Mono');
     @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
-
-    body {
-      font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
-      font-weight: 100;
-      background-color: whitesmoke;
-      letter-spacing: 0.05em;
-      color: black;
-    }
-
-    .頁面中心 {
-      height: 95vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
-
-    .個人資料 {
-      text-align: center;
-    }
-
-    .個人資料 img {
-      width: 120px;
-      border-radius: 35%;
-      box-shadow: 1px 1px 12px gray;
-      margin-bottom: 5px;
-    }
-
-    .個人資料 .中文名字 {
-      font-family: "Noto Serif TC", "SimSun", serif;
-      color: gray;
-      font-size: 34px;
-      font-weight: 900;
-      margin-bottom: -2px;
-    }
-
-    .個人資料 .英文名字 {
-      font-family: "Noto Serif TC", "SimSun", serif;
-      color: gray;
-      font-size: 10px;
-      font-weight: 900;
-      margin-bottom: 1rem;
-    }
-
-    .個人資料 .基本資料 {
-      margin-bottom: 1rem;
-    }
-
-    .個人資料 .基本資料 p {
-      margin-bottom: 8px;
-      letter-spacing: 0.1em;
-    }
-
-    .個人資料 .圖示 {
-      display: flex;
-      justify-content: center;
-      font-size: x-large;
-      font-family: "Noto Sans Mono", "微軟正黑體", sans-serif;
-    }
-
-    .個人資料 .圖示>* {
-      margin: 0px 1rem;
-    }
-
-    .垂直 {
-      display: flex;
-      justify-content: right;
-      flex-direction: row;
-    }
-
-    .橫放 {
-      display: flex;
-      justify-content: left;
-      flex-direction: column;
-    }
-
-    .垂直 .標題 {
-      writing-mode: vertical-lr;
-      color: gray;
-      font-family: "Noto Serif TC", "SimSun", serif;
-      margin: 0px 0.5em 0px 0px;
-      font-size: 56px;
-      font-weight: 900;
-      letter-spacing: 0.2em;
-    }
-
-    .橫放 .標題 {
-      writing-mode: unset;
-      color: gray;
-      font-family: "Noto Serif TC", "SimSun", serif;
-      margin: 0px 0px 0.1em 0px;
-      font-size: 48px;
-      font-weight: 900;
-      letter-spacing: 0.2em;
-    }
-
-    .垂直 .分隔條 {
-      height: 100%;
-      width: 5px;
-      background-color: #0D6EFD;
-      margin-right: 30px;
-    }
-
-    .橫放 .分隔條 {
-      height: 5px;
-      width: 100%;
-      background-color: #0D6EFD;
-      margin-top: 10px;
-      margin-bottom: 30px;
-    }
-
-    .技能 h5 {
-      font-weight: 500;
-      color: gray;
-      margin-bottom: 3px;
-    }
-
-    .技能 p {
-      letter-spacing: 0.2em;
-    }
-
-    .段落 {
-      margin-bottom: 80px;
-    }
-
-    .測試用1 {
-      background-color: orange;
-    }
-
-    .測試用2 {
-      background-color: yellow;
-    }
   </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
   <!-- 個人資料 開始 -->
   <div class="container">
-    <div class="頁面中心">
+    <div class="頁面中心 mb-3">
       <div class="個人資料">
         <img src="./photo.jpg" alt="丁于真">
         <div>
@@ -163,11 +32,11 @@
           <p>Fongshan, Kaohsiung</p>
         </div>
         <div class="圖示">
-          <a href="https://github.com/yuijzeon" data-bs-toggle="tooltip" data-bs-placement="top" title="yuijzeon"><i
+          <a class="mx-2" href="https://github.com/yuijzeon" data-bs-toggle="tooltip" data-bs-placement="top" title="yuijzeon"><i
               class="bi-github"></i></a>
-          <a href="https://home.gamer.com.tw/ding890326" data-bs-toggle="tooltip" data-bs-placement="top"
+          <a class="mx-2" href="https://home.gamer.com.tw/ding890326" data-bs-toggle="tooltip" data-bs-placement="top"
             title="ding890326"><i class="bi bi-house-fill"></i></a>
-          <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="遊隼#5103"><i class="bi bi-discord"></i></a>
+          <a class="mx-2" href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="遊隼#5103"><i class="bi bi-discord"></i></a>
         </div>
         <hr>
         <p class="簡語">遊隼是也。
@@ -181,12 +50,12 @@
 
     <!-- 主內容 開始 -->
     <div class="container">
-      <div class="row 段落">
-        <div class="col-12 col-md-3 標題塊 垂直">
+      <div class="row 段落 mb-5">
+        <div class="col-12 col-lg-3 標題塊 垂直">
           <h2 class="標題">專業技能</h2>
-          <div class="分隔條"></div>
+          <div class="分隔條 mb-5 mb-lg-0"></div>
         </div>
-        <div class="col-12 col-md-9">
+        <div class="col-12 col-lg-9">
           <div class="技能">
             <h5>網頁技術:</h5>
             <p>html5 | CSS3 | Bootstrap</p>
@@ -217,12 +86,12 @@
           </div>
         </div>
       </div>
-      <div class="row 段落">
-        <div class="col-12 col-md-3 標題塊 垂直">
+      <div class="row 段落 mb-5">
+        <div class="col-12 col-lg-3 標題塊 垂直">
           <h2 class="標題">相關經歷</h2>
-          <div class="分隔條"></div>
+          <div class="分隔條 mb-5 mb-lg-0"></div>
         </div>
-        <div class="col-12 col-md-9">
+        <div class="col-12 col-lg-9">
           <div>
             AAA
           </div>
@@ -249,7 +118,7 @@
 
       function tittleStyle() {
         for (let titleBlock of titleBlocks) {
-          if (window.innerWidth < 768) {
+          if (window.innerWidth < 992) {
             titleBlock.classList.remove('垂直');
             titleBlock.classList.add('橫放');
           } else {
