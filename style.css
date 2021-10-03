@@ -12,6 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    animation: fadein 3s ease;
   }
 
   .個人資料 {
@@ -48,6 +49,23 @@ body {
     justify-content: center;
     font-size: x-large;
     font-family: "Noto Sans Mono", "微軟正黑體", sans-serif;
+  }
+
+  @keyframes fadein
+  {
+	from {opacity:0;}
+	to {backgropacity:1;}
+  }
+
+  @keyframes slideup
+  {
+	from {transform: translate(0px, 10%);}
+	to {transform: translate(0px, 0px);}
+  }
+
+  .段落 {
+    animation: fadein 3s ease;
+    animation: slideup 3s ease;
   }
 
   .垂直 {
