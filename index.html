@@ -56,46 +56,49 @@
           <div class="分隔條 mb-5 mb-lg-0"></div>
         </div>
         <div class="col-12 col-lg-9">
-          <div class="技能">
+          <div class="技能 滑入">
             <h5>網頁技術:</h5>
             <p>html5 | CSS3 | Bootstrap</p>
           </div>
-          <div class="技能">
+          <div class="技能 滑入">
             <h5>程式語言:</h5>
             <p>JavaScript | C#</p>
           </div>
-          <div class="技能">
+          <div class="技能 滑入">
             <h5>資料庫技術:</h5>
             <p>MSSQL | MySQL</p>
           </div>
-          <div class="技能">
+          <div class="技能 滑入">
             <h5>字型顯示技術:</h5>
             <p>OpenType Features</p>
           </div>
-          <div class="技能">
+          <div class="技能 滑入">
             <h5>開發工具:</h5>
             <p>Visual Studio | VS Code</p>
           </div>
-          <div class="技能">
+          <div class="技能 滑入">
             <h5>美工軟體:</h5>
             <p>Inkscape</p>
           </div>
-          <div class="技能">
+          <div class="技能 滑入">
             <h5>版本控制:</h5>
             <p>GitHub</p>
           </div>
         </div>
       </div>
-      <div class="row 段落 mb-5">
+      <div class="row 段落 滑入 mb-5">
         <div class="col-12 col-lg-3 標題塊 垂直">
           <h2 class="標題">相關經歷</h2>
           <div class="分隔條 mb-5 mb-lg-0"></div>
         </div>
-        <div class="col-12 col-lg-9">
-          <div>
-            AAA
+          <div class="col-12 col-lg-9">
+            <div class="row">
+              <div class="col-12 col-lg-3">
+                <img class="經歷-img" src="https://lh3.ggpht.com/p/AF1QipPVeqX7VSHRNfC0WTIBj4fmivY53Y2IMgo28a0k=s1024">
+              </div>
+              <div class="col-12 col-lg-9"></div>
+            </div>
           </div>
-        </div>
       </div>
     </div>
     <!-- 主內容 結束 -->
@@ -111,12 +114,25 @@
       })
       // 載入 bootstrap tooltip 結束
 
+      // 滑入控制 開始
+      window.addEventListener('scroll', function () {
+        var fadeInBlocks = document.querySelectorAll(".滑入");
+
+        for (let fadeInBlock of fadeInBlocks) {
+          if (document.documentElement.scrollTop > fadeInBlock.offsetTop - window.innerHeight) {
+            fadeInBlock.classList.remove('滑入');
+            fadeInBlock.classList.add('已滑入');
+          }
+        }
+      });
+      // 滑入控制 結束
+
       // 標題橫排直排控制 開始
       var titleBlocks = document.querySelectorAll(".標題塊");
 
       window.addEventListener('resize', tittleStyle);
 
-      function tittleStyle() {
+      function tittleStyle () {
         for (let titleBlock of titleBlocks) {
           if (window.innerWidth < 992) {
             titleBlock.classList.remove('垂直');
@@ -129,6 +145,7 @@
       }
       // 標題橫排直排控制 結束
       tittleStyle();
+
     </script>
 </body>
 
