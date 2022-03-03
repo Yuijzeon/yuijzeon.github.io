@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Google Static Map Splicer</title>
+</head>
+
+<body>
+  <div style="float:left;">
+    center:<br>
+    22.<input type="text" id="lat" value="970703">,120.<input type="text" id="long" value="191340">
+    <br><br>
+    zoom:<br>
+    <input type="number" id="zoom" value="19">
+    <br><br>
+    maptype:<br>
+    <input type="text" id="maptype" value="satellite">
+    <br><br>
+    style:<br>
+    <input type="text" id="style" value="feature:all|element:labels|visibility:off">
+    <br><br>
+    key:<br>
+    <input type="text" id="key" value="">
+    <br><br>
+    經度位移量:<br>
+    <input type="number" id="longOffset" value="1716">
+    <br><br>
+    緯度位移量:<br>
+    <input type="number" id="latOffset" value="1581">
+    <br><br>
+    數量:<br>
+    <input type="number" id="xQty" value="10">x<input type="number" id="yQty" value="10">
+    <br><br>
+    <input type="button" id="submit" value="GET MAP!">
+  </div>
+
+  <canvas id="result"></canvas>
+
+  <script>
+    select("#submit").onclick = draw;
+    select("#longOffset").onchange = draw;
+    select("#longOffset").onchange = draw;
+
+    select("#lat").ondblclick = function() {
+      select("#lat").value = parseInt(value("#lat")) - (parseInt(value("#latOffset")) * parseInt(value("#yQty")));
+    };
+    
+    select("#long").ondblclick = function() {
+      select("#long").value = parseInt(value("#long")) + parseInt(value("#longOffset")) * parseInt(value("#xQty"));
+    };
+
+    function draw() {
+      let canvas = select('#result');
+      canvas.width = 640 * value('#xQty');
+      canvas.height = 640 * value('#yQty');
+      if (canvas.getContext) {
+        let context = canvas.getContext('2d');
+        context.rect(0, 0, canvas.width, canvas.height);
+        context.fillStyle = "#fff";
+        context.fill();
+
+        for (let y = 0; y < value('#yQty'); y++) {
+          for (let x = 0; x < value('#xQty'); x++) {
+            let center = `22.${parseInt(value('#lat')) - y * parseInt(value('#latOffset'))},120.${parseInt(value('#long')) + x * parseInt(value('#longOffset'))}`;
+            let image = new Image();
+            image.src = `https://maps.googleapis.com/maps/api/staticmap?center=${center}&zoom=${value('#zoom')}&size=640x640&maptype=${value('#maptype')}&style=${value('#style')}&key=${value('#key')}`;
+            image.onload = function() {
+              context.drawImage(image, 640 * x, 640 * y);
+            }
+          }
+        }
+      }
+    }
+
+    function select(query) {
+      return document.querySelector(query);
+    }
+
+    function value(query) {
+      return document.querySelector(query).value;
+    }
+  </script>
+</body>
+
+</html>
